@@ -1,0 +1,146 @@
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class CalculateForm1
+    Inherits System.Windows.Forms.Form
+
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        Try
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
+        Finally
+            MyBase.Dispose(disposing)
+        End Try
+    End Sub
+
+    'Required by the Windows Form Designer
+    Private components As System.ComponentModel.IContainer
+
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()> _
+    Private Sub InitializeComponent()
+        Me.FirstNumberLable = New System.Windows.Forms.Label()
+        Me.SecondNumberLabel2 = New System.Windows.Forms.Label()
+        Me.SecondNumberTextBox1 = New System.Windows.Forms.TextBox()
+        Me.FirstNumberTextBox2 = New System.Windows.Forms.TextBox()
+        Me.calculateButton1 = New System.Windows.Forms.Button()
+        Me.ClearButton2 = New System.Windows.Forms.Button()
+        Me.ExitButton3 = New System.Windows.Forms.Button()
+        Me.SuspendLayout()
+        '
+        'FirstNumberLable
+        '
+        Me.FirstNumberLable.AutoSize = True
+        Me.FirstNumberLable.Location = New System.Drawing.Point(79, 32)
+        Me.FirstNumberLable.Name = "FirstNumberLable"
+        Me.FirstNumberLable.Size = New System.Drawing.Size(48, 13)
+        Me.FirstNumberLable.TabIndex = 0
+        Me.FirstNumberLable.Text = "First NO:"
+        '
+        'SecondNumberLabel2
+        '
+        Me.SecondNumberLabel2.AutoSize = True
+        Me.SecondNumberLabel2.Location = New System.Drawing.Point(79, 74)
+        Me.SecondNumberLabel2.Name = "SecondNumberLabel2"
+        Me.SecondNumberLabel2.Size = New System.Drawing.Size(66, 13)
+        Me.SecondNumberLabel2.TabIndex = 1
+        Me.SecondNumberLabel2.Text = "Second NO:"
+        '
+        'SecondNumberTextBox1
+        '
+        Me.SecondNumberTextBox1.Location = New System.Drawing.Point(163, 71)
+        Me.SecondNumberTextBox1.Name = "SecondNumberTextBox1"
+        Me.SecondNumberTextBox1.Size = New System.Drawing.Size(156, 20)
+        Me.SecondNumberTextBox1.TabIndex = 1
+        '
+        'FirstNumberTextBox2
+        '
+        Me.FirstNumberTextBox2.Location = New System.Drawing.Point(163, 29)
+        Me.FirstNumberTextBox2.Name = "FirstNumberTextBox2"
+        Me.FirstNumberTextBox2.Size = New System.Drawing.Size(156, 20)
+        Me.FirstNumberTextBox2.TabIndex = 0
+        '
+        'calculateButton1
+        '
+        Me.calculateButton1.Location = New System.Drawing.Point(82, 107)
+        Me.calculateButton1.Name = "calculateButton1"
+        Me.calculateButton1.Size = New System.Drawing.Size(75, 23)
+        Me.calculateButton1.TabIndex = 2
+        Me.calculateButton1.Text = "&Sum"
+        Me.calculateButton1.UseVisualStyleBackColor = True
+        '
+        'ClearButton2
+        '
+        Me.ClearButton2.Location = New System.Drawing.Point(163, 107)
+        Me.ClearButton2.Name = "ClearButton2"
+        Me.ClearButton2.Size = New System.Drawing.Size(75, 23)
+        Me.ClearButton2.TabIndex = 3
+        Me.ClearButton2.Text = "&Clear"
+        Me.ClearButton2.UseVisualStyleBackColor = True
+        '
+        'ExitButton3
+        '
+        Me.ExitButton3.Location = New System.Drawing.Point(244, 107)
+        Me.ExitButton3.Name = "ExitButton3"
+        Me.ExitButton3.Size = New System.Drawing.Size(75, 23)
+        Me.ExitButton3.TabIndex = 4
+        Me.ExitButton3.Text = "&Exit"
+        Me.ExitButton3.UseVisualStyleBackColor = True
+        '
+        'CalculateForm1
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(398, 175)
+        Me.Controls.Add(Me.ExitButton3)
+        Me.Controls.Add(Me.ClearButton2)
+        Me.Controls.Add(Me.calculateButton1)
+        Me.Controls.Add(Me.FirstNumberTextBox2)
+        Me.Controls.Add(Me.SecondNumberTextBox1)
+        Me.Controls.Add(Me.SecondNumberLabel2)
+        Me.Controls.Add(Me.FirstNumberLable)
+        Me.Name = "CalculateForm1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Calculate"
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
+
+    End Sub
+    Friend WithEvents FirstNumberLable As System.Windows.Forms.Label
+    Friend WithEvents SecondNumberLabel2 As System.Windows.Forms.Label
+    Friend WithEvents SecondNumberTextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents FirstNumberTextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents calculateButton1 As System.Windows.Forms.Button
+    Friend WithEvents ClearButton2 As System.Windows.Forms.Button
+    Friend WithEvents ExitButton3 As System.Windows.Forms.Button
+
+    Private Sub ExitButton3_Click(sender As Object, e As EventArgs) Handles ExitButton3.Click
+        'For Exit window
+        Application.Exit()
+
+    End Sub
+
+    Private Sub ClearButton2_Click(sender As Object, e As EventArgs) Handles ClearButton2.Click
+        FirstNumberTextBox2.Text = ""
+        SecondNumberTextBox1.Text = ""
+        '2nd method to clear the text Box
+        'FirstNumberTextBox2.Clear()
+        'SecondNumberTextBox1.Clear()
+        FirstNumberTextBox2.Focus()
+    End Sub
+
+    Private Sub calculateButton1_Click(sender As Object, e As EventArgs) Handles calculateButton1.Click
+
+        Dim firstNmber As Integer = FirstNumberTextBox2.Text
+        Dim secondNumber As Integer = SecondNumberTextBox1.Text
+
+        Dim result = firstNmber + secondNumber
+
+        MessageBox.Show("Final result is " & result, "Calculate ", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+
+    End Sub
+End Class
