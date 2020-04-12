@@ -1,0 +1,53 @@
+Public Class GradeForm1
+
+    Private Sub GradeButton1_Click(sender As Object, e As EventArgs) Handles GradeButton1.Click
+        Dim marks As Integer = MarksTextBox1.Text
+        If (marks > 100) Then
+            MessageBox.Show("You Enter invalid Marks", "Result", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            If (MessageBoxButtons.OK = 0) Then
+                MarksTextBox1.Clear()
+                MarksTextBox1.Focus()
+            End If
+        ElseIf (marks >= 90 And marks < 100) Then
+            MessageBox.Show("You are passed with Grade A", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            If (MessageBoxButtons.OK = 0) Then
+                MarksTextBox1.Clear()
+                MarksTextBox1.Focus()
+            End If
+        ElseIf (marks >= 80) Then
+            MessageBox.Show("You are passed with Grade B", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            If (MessageBoxButtons.OK = 0) Then
+                MarksTextBox1.Clear()
+                MarksTextBox1.Focus()
+            End If
+        ElseIf (marks >= 70) Then
+            MessageBox.Show("You are passed with Grade C", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            If (MessageBoxButtons.OK = 0) Then
+                MarksTextBox1.Clear()
+                MarksTextBox1.Focus()
+            End If
+        ElseIf (marks >= 60) Then
+            MessageBox.Show("You are passed with Grade D", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            If (MessageBoxButtons.OK = 0) Then
+                MarksTextBox1.Clear()
+                MarksTextBox1.Focus()
+            End If
+        ElseIf (marks >= 50) Then
+            MessageBox.Show("You are passed with Grade E", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            If (MessageBoxButtons.OK = 0) Then
+                MarksTextBox1.Clear()
+                MarksTextBox1.Focus()
+            End If
+        ElseIf (marks >= 50) Then
+            MessageBox.Show("You are passed with Grade F", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            If (MessageBoxButtons.OK = 0) Then
+                MarksTextBox1.Clear()
+                MarksTextBox1.Focus()
+            End If
+        Else
+            MessageBox.Show("You are Fail", "Result", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MarksTextBox1.Clear()
+            MarksTextBox1.Focus()
+        End If
+    End Sub
+End Class
